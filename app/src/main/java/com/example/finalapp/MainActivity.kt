@@ -13,6 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.finalapp.ui.theme.FinalAppTheme
 
 class MainActivity : ComponentActivity() {
+    // Access check
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
