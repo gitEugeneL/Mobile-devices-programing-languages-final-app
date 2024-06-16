@@ -1,6 +1,6 @@
-package com.example.finalapp.domain.repositories
+package com.example.finalapp.featureNote.domain.repositories
 
-import com.example.finalapp.domain.models.Item
+import com.example.finalapp.featureNote.domain.models.Item
 import kotlinx.coroutines.flow.Flow
 
 interface ItemRepository {
@@ -9,7 +9,7 @@ interface ItemRepository {
 
     suspend fun getItemById(itemId: Long) : Item?
 
-    suspend fun createItem(item: Item)
+    suspend fun putItem(item: Item)
 
     suspend fun deleteItem(item: Item)
 }

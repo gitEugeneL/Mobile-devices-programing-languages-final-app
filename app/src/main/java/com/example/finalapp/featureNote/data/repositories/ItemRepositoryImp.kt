@@ -1,8 +1,8 @@
-package com.example.finalapp.data.repositories
+package com.example.finalapp.featureNote.data.repositories
 
-import com.example.finalapp.data.source.ItemDAO
-import com.example.finalapp.domain.models.Item
-import com.example.finalapp.domain.repositories.ItemRepository
+import com.example.finalapp.featureNote.data.source.ItemDAO
+import com.example.finalapp.featureNote.domain.models.Item
+import com.example.finalapp.featureNote.domain.repositories.ItemRepository
 import kotlinx.coroutines.flow.Flow
 
 class ItemRepositoryImp(private val context: ItemDAO) : ItemRepository {
@@ -15,8 +15,8 @@ class ItemRepositoryImp(private val context: ItemDAO) : ItemRepository {
         return context.getItemById(itemId)
     }
 
-    override suspend fun createItem(item: Item) {
-        context.createItem(item)
+    override suspend fun putItem(item: Item) {
+        context.putItem(item)
     }
 
     override suspend fun deleteItem(item: Item) {
