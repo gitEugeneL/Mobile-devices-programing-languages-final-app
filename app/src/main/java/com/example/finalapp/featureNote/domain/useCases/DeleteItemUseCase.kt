@@ -5,7 +5,7 @@ import com.example.finalapp.featureNote.domain.repositories.ItemRepository
 
 class DeleteItemUseCase(private val repository: ItemRepository) {
 
-    suspend fun invoke(item: Item) {
+    suspend operator fun invoke(item: Item) {
         repository.deleteItem(item)
     }
 }

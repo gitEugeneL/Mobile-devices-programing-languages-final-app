@@ -16,3 +16,5 @@ data class Item(
         val itemColors = listOf(Red, Orange, OrangeStrong, Yellow)
     }
 }
+
+class InvalidItemException(message: String): Exception(message)
