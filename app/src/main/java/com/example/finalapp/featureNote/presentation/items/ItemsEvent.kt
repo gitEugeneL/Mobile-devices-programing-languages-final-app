@@ -1,4 +1,4 @@
-package com.example.finalapp.featureNote.presentation.notes
+package com.example.finalapp.featureNote.presentation.items
 
 import com.example.finalapp.featureNote.domain.models.Item
 import com.example.finalapp.featureNote.domain.util.ItemOrder

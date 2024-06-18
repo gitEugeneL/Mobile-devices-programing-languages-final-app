@@ -8,6 +8,7 @@ import com.example.finalapp.featureNote.domain.repositories.ItemRepository
 import com.example.finalapp.featureNote.domain.useCases.AddItemUseCase
 import com.example.finalapp.featureNote.domain.useCases.DeleteItemUseCase
 import com.example.finalapp.featureNote.domain.useCases.GetAllItemsUseCase
+import com.example.finalapp.featureNote.domain.useCases.GetByIdItemUseCase
 import com.example.finalapp.featureNote.domain.useCases.ItemUseCases
 import dagger.Module
 import dagger.Provides
@@ -42,7 +43,8 @@ object AppModule {
         return ItemUseCases(
             getAllItems = GetAllItemsUseCase(repository),
             deleteItem = DeleteItemUseCase(repository),
-            addItem = AddItemUseCase(repository)
+            addItem = AddItemUseCase(repository),
+            getItemById = GetByIdItemUseCase(repository)
         )
     }
 

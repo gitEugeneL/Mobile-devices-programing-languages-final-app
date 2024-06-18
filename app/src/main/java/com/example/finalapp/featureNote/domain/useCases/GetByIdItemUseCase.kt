@@ -5,7 +5,7 @@ import com.example.finalapp.featureNote.domain.repositories.ItemRepository
 
 class GetByIdItemUseCase(private val repository: ItemRepository) {
 
-    suspend fun invoke(itemId: Long): Item? {
+    suspend operator fun invoke(itemId: Long): Item? {
         return repository.getItemById(itemId)
     }
 }
