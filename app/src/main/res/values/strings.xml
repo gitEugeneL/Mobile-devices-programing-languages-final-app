@@ -14,4 +14,5 @@
     <string name="enter_item_name">Enter item name...</string>
     <string name="enter_item_body">Enter item body...</string>
     <string name="couldnt_save_item">Couldn\'t save item</string>
+    <string name="save_note">Save note</string>
 </resources>
