@@ -6,7 +6,7 @@ import com.example.finalapp.ui.theme.*
 
 @Entity
 data class Item(
-    @PrimaryKey val id: Long? = null,
+    @PrimaryKey val id: Int? = null,
     val name: String,
     val body: String,
     val timestamp: Long,

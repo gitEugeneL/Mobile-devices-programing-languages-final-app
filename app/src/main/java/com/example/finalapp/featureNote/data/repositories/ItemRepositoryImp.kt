@@ -11,7 +11,7 @@ class ItemRepositoryImp(private val context: ItemDAO) : ItemRepository {
         return context.getAllItems()
     }
 
-    override suspend fun getItemById(itemId: Long) : Item? {
+    override suspend fun getItemById(itemId: Int) : Item? {
         return context.getItemById(itemId)
     }
 

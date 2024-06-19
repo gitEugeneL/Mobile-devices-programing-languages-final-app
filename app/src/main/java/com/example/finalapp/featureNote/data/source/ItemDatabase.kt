@@ -12,7 +12,7 @@ abstract class ItemDatabase : RoomDatabase() {
     abstract val itemDAO: ItemDAO
 
     companion object {
-        const val DATABASE_NAME = "item_database"
+        const val DATABASE_NAME = "items_database"
     }
 
 }

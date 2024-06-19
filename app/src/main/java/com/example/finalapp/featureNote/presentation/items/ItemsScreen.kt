@@ -39,7 +39,7 @@ import com.example.finalapp.featureNote.presentation.items.components.OrderSecti
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.SnackbarResult
 import androidx.compose.ui.platform.LocalContext
-import com.example.finalapp.featureNote.domain.models.Item
+import com.example.finalapp.featureNote.presentation.util.Screen
 import kotlinx.coroutines.launch
 
 @Composable
@@ -56,7 +56,7 @@ fun ItemsScreen(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-
+                    navController.navigate(Screen.AddEditItemScreen.route)
                 },
                 backgroundColor = MaterialTheme.colors.primary
             ) {
@@ -113,7 +113,10 @@ fun ItemsScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
-
+                                navController.navigate(
+                                    Screen.AddEditItemScreen.route
+                                            + "?itemId=${item.id}&itemColor=${item.color}"
+                                )
                             },
                         onDeleteClick = {
                             viewModel.onEvent(ItemsEvent.DeleteItem(item))

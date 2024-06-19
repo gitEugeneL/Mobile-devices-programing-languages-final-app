@@ -41,7 +41,7 @@ class MainActivity : ComponentActivity() {
                                     "?itemId={itemId}&itemColor={itemColor}",
                             arguments = listOf(
                                 navArgument("itemId") {
-                                    type = NavType.LongType
+                                    type = NavType.IntType
                                     defaultValue = -1L
                                 },
                                 navArgument("itemColor") {

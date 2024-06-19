@@ -45,11 +45,11 @@ class AddEditItemViewModel @Inject constructor(
     private val _eventFlow = MutableSharedFlow<UIEvent>()
     val eventFlow = _eventFlow
 
-    private var currentItemId: Long? = null
+    private var currentItemId: Int? = null
 
     init {
-        savedStateHandle.get<Long>("itemId")?.let { itemId ->
-            if (itemId != -1L) {
+        savedStateHandle.get<Int>("itemId")?.let { itemId ->
+            if (itemId != -1) {
                 viewModelScope.launch {
                     itemUseCases.getItemById(itemId)?.also {item ->
                         currentItemId = item.id
