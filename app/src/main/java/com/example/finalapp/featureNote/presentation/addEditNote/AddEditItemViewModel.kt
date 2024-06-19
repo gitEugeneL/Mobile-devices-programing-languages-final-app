@@ -4,7 +4,6 @@ import android.app.Application
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.graphics.toArgb
-import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -14,7 +13,6 @@ import com.example.finalapp.featureNote.domain.models.Item
 import com.example.finalapp.featureNote.domain.useCases.ItemUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -51,18 +49,20 @@ class AddEditItemViewModel @Inject constructor(
 
     init {
         savedStateHandle.get<Long>("itemId")?.let { itemId ->
-            viewModelScope.launch {
-                itemUseCases.getItemById(itemId)?.also {item ->
-                    currentItemId = item.id
-                    _itemName.value = itemName.value.copy(
-                        text = item.name,
-                        isHintVisible = false
-                    )
-                    _itemBody.value = itemBody.value.copy(
-                        text = item.body,
-                        isHintVisible = false
-                    )
-                    _itemColor.value = item.color
+            if (itemId != -1L) {
+                viewModelScope.launch {
+                    itemUseCases.getItemById(itemId)?.also {item ->
+                        currentItemId = item.id
+                        _itemName.value = itemName.value.copy(
+                            text = item.name,
+                            isHintVisible = false
+                        )
+                        _itemBody.value = itemBody.value.copy(
+                            text = item.body,
+                            isHintVisible = false
+                        )
+                        _itemColor.value = item.color
+                    }
                 }
             }
         }
