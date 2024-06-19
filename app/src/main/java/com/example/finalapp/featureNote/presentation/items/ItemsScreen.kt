@@ -136,8 +136,3 @@ fun ItemsScreen(
     }
 
 }
-
-@Composable
-private fun OnDelete(item: Item) {
-
-}
