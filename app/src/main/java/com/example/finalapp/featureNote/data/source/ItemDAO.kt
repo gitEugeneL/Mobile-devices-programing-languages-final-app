@@ -15,11 +15,11 @@ interface ItemDAO {
     fun getAllItems(): Flow<List<Item>>
 
     @Query("SELECT * FROM item WHERE id = :itemId")
-    fun getItemById(itemId: Int): Item?
+    suspend fun getItemById(itemId: Int): Item?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun putItem(item: Item)
+    suspend fun putItem(item: Item)
 
     @Delete
-    fun deleteItem(item: Item)
+    suspend fun deleteItem(item: Item)
 }

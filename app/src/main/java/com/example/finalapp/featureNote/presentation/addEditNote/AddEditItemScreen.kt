@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
@@ -98,7 +99,7 @@ fun AddEditItemScreen(
         ) {
             Row(
                 modifier = Modifier
-                    .fillMaxSize()
+                    .fillMaxWidth()
                     .padding(8.dp),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
@@ -142,7 +143,7 @@ fun AddEditItemScreen(
                 onFocusChange = {
                     viewModel.onEvent(AddEditItemEvent.ChangeNameFocus(it))
                 },
-                singleLine = false,
+                singleLine = true,
                 textStyle = MaterialTheme.typography.h5
             )
             Spacer(modifier = Modifier.size(12.dp))
