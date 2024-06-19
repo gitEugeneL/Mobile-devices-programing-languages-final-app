@@ -5,7 +5,7 @@
 The application allows you to create, edit and delete records. Access selection of accent color for the record.
 Allows you to sort records by different parameters
 
-![Image](https://github.com/gitEugeneL/Mobile-devices-programing-languages-final-app/blob/mainimage.png)
+![Image](https://github.com/gitEugeneL/Mobile-devices-programing-languages-final-app/blob/main/image.png)
 
 ## 👷 Frameworks, Libraries and Technologies
 
