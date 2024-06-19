@@ -39,8 +39,8 @@ fun OrderSection(
             Spacer(modifier = Modifier.width(8.dp))
             DefaultRadioButton(
                 text = stringResource(R.string.item_date),
-                selected = itemOrder is ItemOrder.Name,
-                onSelect = { onOrderChange(ItemOrder.Name(itemOrder.orderType)) }
+                selected = itemOrder is ItemOrder.Timestamp,
+                onSelect = { onOrderChange(ItemOrder.Timestamp(itemOrder.orderType)) }
             )
         }
         Spacer(modifier = Modifier.width(16.dp))
